@@ -1,0 +1,14 @@
+using System;
+class prog3
+{
+    static void Main(){
+        double f, c;
+
+        Console.WriteLine("Digite a temperatura em Fahrenheit");
+        f = double.Parse(Console.ReadLine());
+        
+        c = (5 * (f - 32))/(9);
+        
+        Console.WriteLine("Em celsius fica: " + c);
+   }
+}
