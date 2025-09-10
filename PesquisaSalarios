@@ -1,0 +1,51 @@
+using System;
+class prog7
+{
+    static void Main()
+    {
+        double somaSalarios = 0, maiorSalario = 0;
+        int percentualSalario5000 = 0, percentualEstudo = 0, cont = 0, somaAnos = 0;
+        double salario;
+        int anos;
+
+        string resposta = "S";
+
+        while (resposta.ToUpper() == "S") 
+        {
+            Console.Write("Digite o salário: ");
+            salario = double.Parse(Console.ReadLine());
+
+            Console.Write("Anos de estudo: ");
+            anos = int.Parse(Console.ReadLine());
+
+            somaSalarios += salario;
+            somaAnos += anos;
+            cont++;
+
+            if (salario > maiorSalario)
+                maiorSalario = salario;
+
+            if (salario <= 5000)
+                percentualSalario5000++;
+
+            if (anos >= 15)
+                percentualEstudo++;
+
+            Console.Write("Deseja informar mais? (S/N): ");
+            resposta = Console.ReadLine();
+        }
+        // para colocar em valor decimal Console.WriteLine($"Percentual: {percentual:F2}%");
+        if (cont > 0)
+        {
+            Console.WriteLine($"Média do salário: {somaSalarios / cont:F2}");
+            Console.WriteLine($"Média de anos de estudo: {(double)somaAnos / cont}");
+            Console.WriteLine($"Maior salário: {maiorSalario}");
+            Console.WriteLine($"Percentual com salário até R$5000: {(double)percentualSalario5000 / cont * 100:F2}%");
+            Console.WriteLine($"Percentual com 15 ou mais anos de estudo: {(double)percentualEstudo / cont * 100:F2}%");
+        }
+        else
+        {
+            Console.WriteLine("Nenhum dado foi informado.");
+        }
+    }
+}
