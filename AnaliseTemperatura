@@ -1,0 +1,32 @@
+using System;
+class prog4
+{
+    static void Main(string[] args)
+    {
+        int i, diaMaior = 0, diaMenor=0;
+        double temperatura = 0, maiortemperatura = 0, menortemperatura = 100;
+
+        for (i = 1; i <= 3; i++)
+        {
+            Console.WriteLine("Digite o valor do dia: " + i + " correspondente a média da temperatura de Belo Horizonte");
+            temperatura = double.Parse(Console.ReadLine());
+
+            if (temperatura > maiortemperatura)
+            {
+                maiortemperatura = temperatura;
+                diaMaior++;
+            }
+
+            else if (temperatura < menortemperatura)
+            {
+                menortemperatura = temperatura;
+                diaMenor++;
+            }
+
+         }
+        
+         Console.WriteLine("A maior temperatura foi: " + maiortemperatura + " no dia: " + diaMaior);
+         Console.WriteLine("A menor temperatura foi: " + menortemperatura + " no dia: " + diaMenor);
+    }
+
+}
